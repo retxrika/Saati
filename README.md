@@ -18,3 +18,14 @@
 
 # Тесты
 
+- 1 Тест
+
+![Image alt](https://github.com/retxrika/Saati/blob/master/images/1_0.png)
+
+![Image alt](https://github.com/retxrika/Saati/blob/master/images/1_1.png)
+
+- 2 Тест
+
+![Image alt](https://github.com/retxrika/Saati/blob/master/images/2_0.png)
+
+![Image alt](https://github.com/retxrika/Saati/blob/master/images/2_1.png)
