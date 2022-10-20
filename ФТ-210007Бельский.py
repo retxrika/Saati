@@ -45,7 +45,7 @@ for i in range(matrix.shape[0]):
     for j in range(matrix.shape[1]):
         if matrix[i, j] == 1:
             break
-        matrix[i, j] = input_num(f'Введите числовое значение критерия {i + 1} строки {j + 1} столбца в матрице')
+        matrix[i, j] = input_num(f'Введите результат сравнения 2-х критериев по важности для ячейки [{i + 1}][{j + 1}]')
         matrix[j, i] = matrix[0, 0] / matrix[i, j]
 
 mults = []
