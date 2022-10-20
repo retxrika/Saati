@@ -1,6 +1,7 @@
 import math
 import numpy
 import os
+from locale import atof, setlocale, LC_NUMERIC
 
 # Вывод мануала.
 def print_man():
@@ -20,10 +21,10 @@ def print_results(coeffs):
         print(f'Весовой коэффициент для {i + 1}-го критерия: {coeffs[i]}')
 
 # Ввод числа с проверкой на корректность.
-def input_num(msg, min=None):
+def input_num(msg, min=None, type=int):
     while True:
         try:
-            num = int(input(msg + ': '))
+            num = int(input(msg + ': ')) if type == int else atof(input(msg + ': '))
         except:
             print('\033[31m{}\033[0m'.format('Invalid value. Try again...'))
             continue
@@ -32,6 +33,9 @@ def input_num(msg, min=None):
             print('\033[31m{}\033[0m'.format(f'Value must be greater than {min}! Try again...'))
             continue
         return num
+
+# Возможность использовать ввод вещественных чисел с запятой.
+setlocale(LC_NUMERIC, '')
 
 print_man()
 count = input_num('Введите количество критериев', min=2)
@@ -45,7 +49,7 @@ for i in range(matrix.shape[0]):
     for j in range(matrix.shape[1]):
         if matrix[i, j] == 1:
             break
-        matrix[i, j] = input_num(f'Введите результат сравнения 2-х критериев по важности для ячейки [{i + 1}][{j + 1}]')
+        matrix[i, j] = input_num(f'Введите результат сравнения 2-х критериев по важности для ячейки [{i + 1}][{j + 1}]', type=float)
         matrix[j, i] = matrix[0, 0] / matrix[i, j]
 
 mults = []
